@@ -1,18 +1,39 @@
 /**
  * Created by Sai Lalith Pathi on 23-May-17.
  */
-public class Students {
-    int regNum;
-    String name;
-    public Students(int i, String pure) {
-        this.name = pure;
-        this.regNum = i;
-    }
+class Students {
+    private int regNum;
+    private String name;
     public void display(){
-        System.out.println(name + "  " +regNum);
+        if(name.equals("Zoom")){
+            System.out.println("Zoom Bro !");
+        }
+        else {
+            System.out.println(getName() + "  " + getRegNum());
+        }
+    }
+    public int getRegNum(){
+        return regNum;
+    }
+    public String getName(){
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setregNum(int regNum) {
+        this.regNum = regNum;
     }
     public static void main(String args[]){
-        Students students = new Students(123,"zoom");
-        students.display();
+        Students[] stud = new Students[2];
+        stud[0] = new Students();
+        stud[1] = new Students();
+        stud[0].setName("H");
+        stud[0].setregNum(123);
+        stud[1].setName("I");
+        stud[1].setregNum(456);
+        for(int i=0;i<stud.length;i++){
+            stud[i].display();
+        }
     }
 }
