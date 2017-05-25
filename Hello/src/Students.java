@@ -1,15 +1,22 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 /**
  * Created by Sai Lalith Pathi on 23-May-17.
  */
-class Students {
+class Students extends People{
     private int regNum;
     private String name;
-    public void display(){
+    static ArrayList<String> strings = new ArrayList<>();
+    static HashMap<Integer,String> pairs = new LinkedHashMap<>();
+    private void display(){
         if(name.equals("Zoom")){
             System.out.println("Zoom Bro !");
         }
         else {
-            System.out.println(getName() + "  " + getRegNum());
+            System.out.println(getName() + "  " + getRegNum() +" "+getGender());
         }
     }
     public int getRegNum(){
@@ -30,10 +37,19 @@ class Students {
         stud[1] = new Students();
         stud[0].setName("H");
         stud[0].setregNum(123);
+        stud[0].setGender("Female");
         stud[1].setName("I");
         stud[1].setregNum(456);
+        stud[1].setGender("Male");
         for(int i=0;i<stud.length;i++){
+            pairs.put(stud[i].getRegNum(),stud[i].getName());
+            strings.add(stud[i].getName());
             stud[i].display();
+        }
+        System.out.println(strings.get(0));
+        System.out.println(strings.get(1));
+        for(Map.Entry<Integer, String> hm:pairs.entrySet()){
+            System.out.println("Value:"+hm.getValue() +" Key:"+hm.getKey());
         }
     }
 }
