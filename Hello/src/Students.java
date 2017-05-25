@@ -7,7 +7,6 @@ import java.util.Map;
  * Created by Sai Lalith Pathi on 23-May-17.
  */
 class Students extends People{
-    Zoom in and out !
     private int regNum;
     private String name;
     static ArrayList<String> strings = new ArrayList<>();
